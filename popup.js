@@ -10,45 +10,40 @@
   var name = 'admin';
   var pass =  'test';
   var url = "http://erpal.local/rest/projects/user/login.json";
-  var url = "http://erpal.local/services/session/token";
-  //var url = "http://erpal.local/rest/projects/user/token";
-  //var url = "https://erpal.brightsolutions.de/rest/projects/user/login.json";
-
-//  $.post( "http://erpal.local/rest/projects/user/login.json", function( data ) {
-//    $( ".result" ).html( data );
-//  });
-
+  var tt_url = "http://erpal.local/rest/projects/timetracking/statistics.json";
 
   $.ajax({
-    url:url,
+    url:"http://erpal.local/services/session/token",
     type:"get",
-    dataType:"jsonp",
-    cache: false,
-    crossDomain: true,
+    dataType:"text",
     error:function (jqXHR, textStatus, errorThrown) {
       console.log(errorThrown);
     },
     success: function (token) {
+      console.log(token);
       // Call system connect with session token.
-      //console.log(token);
-//      $.ajax({
-//        url: 'http://erpal.local/rest/projects/system/connect.json',
-//        type: "post",
-//        dataType: "json",
-//        beforeSend: function (request) {
-//          request.setRequestHeader("X-CSRF-Token", token);
-//        },
-//        error: function (jqXHR, textStatus, errorThrown) {
-//          alert(errorThrown);
-//        },
-//        success: function (data) {
-//          alert('Hello user #' + data.user.uid);
-//        }
-//      });
+      $.ajax({
+        url : tt_url,
+        type : 'post',
+        dataType : 'json',
+        crossDomain: true,
+        cache: false,
+        beforeSend: function (request) {
+          request.setRequestHeader("X-CSRF-Token", token);
+          //request.setRequestHeader("Cookie", cookie);
+        },
+        error : function(data) {
+          //error code
+          console.log('Error',data);
+        },
+        success : function(data) {
+          //success code
+          console.log(data);
+        }
+      });
     }
   });
-
-
+//
 //  $.ajax({
 //    url: url,
 //    type: "POST",
@@ -63,29 +58,36 @@
 //    },
 //    success : function(data) {
 //      console.log(data);
-//      //success code
+////      //success code
 ////      var sessid = data.sessid;
 ////      var session_name = data.session_name;
 ////
 ////      //var user = data.user;
-////      console.log('session_name',session_name);
-////      console.log('sessid',sessid);
+////      //console.log('session_name',session_name);
+////      //console.log('sessid',sessid);
 ////
 ////      $.cookie(session_name, sessid);
+////      var cookie = data.session_name + "=" + data.sessid;
 //
-////      $.ajax({
-////        url : "http://yourserver.com/test/user/1.json",
-////        type : 'get',
-////        dataType : 'json',
-////        error : function(data) {
-////          //error code
-////          console.log('Error',data);
-////        },
-////        success : function(data) {
-////          //success code
-////          console.log('Cookie Accepted',data);
-////        }
-////      });
+//      $.ajax({
+//        url : tt_url,
+//        type : 'post',
+//        dataType : 'json',
+//        crossDomain: true,
+//        cache: false,
+//        beforeSend: function (request) {
+//          //request.setRequestHeader("X-CSRF-Token", data.token);
+//          //request.setRequestHeader("Cookie", cookie);
+//        },
+//        error : function(data) {
+//          //error code
+//          console.log('Error',data);
+//        },
+//        success : function(data) {
+//          //success code
+//          console.log('Cookie Accepted',data);
+//        }
+//      });
 //
 //    }
 //  });
