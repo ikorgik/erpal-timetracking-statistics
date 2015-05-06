@@ -19,7 +19,6 @@
       console.log(errorThrown);
     },
     success: function (token) {
-      console.log(token);
       $.ajax({
         url : tt_url,
         type : 'post',
@@ -31,11 +30,15 @@
         },
         error : function(data) {
           //error code
-          console.log('Error',data);
+          console.log('Error', data);
         },
         success : function(data) {
           //success code
           console.log(data);
+          $('.current-task .label').text(data.current_tt.title);
+
+          var task_time = data.current_tt.amount + '/' + data.current_tt.estimate + ' (' + (data.current_tt.estimate - data.current_tt.amount) + ')';
+          $('.current-task .task-time').text(task_time);
         }
       });
     }
