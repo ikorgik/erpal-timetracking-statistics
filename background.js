@@ -3,10 +3,10 @@ chrome.browserAction.setBadgeBackgroundColor({color:[0, 200, 0, 100]});
 
 
 setInterval(function() {
+  //var aa = Math.floor((Math.random() * 200) + 1);
   chrome.browserAction.setBadgeText({text: myFunction()});
-
-  chrome.browserAction.setBadgeBackgroundColor({color:[0, 0, 0, 100]});
-}, 1000 * 2);
+  chrome.browserAction.setBadgeBackgroundColor({color:[0, 200, 0, 100]});
+}, 1000 * 10);
 
 function addZero(i) {
   if (i < 10) {
