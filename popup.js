@@ -33,12 +33,28 @@
           console.log('Error', data);
         },
         success : function(data) {
-          //success code
-          console.log(data);
-          $('.current-task .label').text(data.current_tt.title);
+          var day_limit = '8.00';
+          var week_limit = '40.00';
+          var month_limit = '160.00';
 
-          var task_time = data.current_tt.amount + '/' + data.current_tt.estimate + ' (' + (data.current_tt.estimate - data.current_tt.amount) + ')';
+          console.log(data);
+          $('.current-task .label').text(data.current.title);
+
+          var task_time = data.current.amount + '/' + data.current.estimate + ' (' + (data.current.estimate - data.current.amount) + ')';
           $('.current-task .task-time').text(task_time);
+
+          var day = data.day + '/' + day_limit + ' (' + (day_limit - data.day) + ')';
+          $('.details .day .time').text(day);
+
+          var week = data.week + '/' + week_limit + ' (' + (week_limit - data.week) + ')';
+          $('.details .week .time').text(week);
+
+          var month = data.month + '/' + month_limit + ' (' + (month_limit - data.month) + ')';
+          $('.details .month .time').text(month);
+
+          $('.loading').fadeOut(200, function() {
+            $(this).removeClass("processed");
+          });
         }
       });
     }

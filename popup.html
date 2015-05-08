@@ -6,10 +6,37 @@
       body {
         font-size: 100%;
         width: 400px;
+        min-height: 200px;
       }
       .label {
           min-width: 100px;
           display: inline-block;
+      }
+      .loading {
+        display: none;
+        background: #ececec;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
+      .loading img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 42px;
+        height: 42px;
+        margin:-21px 0 0 -21px;
+        -webkit-animation:spin 1s linear infinite;
+        -moz-animation:spin 1s linear infinite;
+        animation:spin 1s linear infinite;
+      }
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+      .loading.processed {
+        display: block;
       }
     </style>
     <script src="jquery-1.6.4.min.js"></script>
@@ -17,28 +44,31 @@
     <script type="text/javascript" src="popup.js"></script>
   </head>
   <body>
-    <div class="current-task">
-        <span class="label">AC-621 Create homepage</span>
-        <span class="task-pause"></span>
-        <span class="task-time">1.12/8.00(-6.77)</span>
-    </div>
-    <div class="details">
-        <div class="days">
-            <span class="label">Day:</span>
-            <span class="time">6.5/8.00(-1.5)</span>
+      <div class="container">
+        <div class="loading processed"><img src="icon.png" alt=""/></div>
+        <div class="current-task">
+            <span class="label">AC-621 Create homepage</span>
+            <span class="task-pause"></span>
+            <span class="task-time">1.12/8.00(-6.77)</span>
         </div>
-        <div class="week">
-            <span class="label">Week:</span>
-            <span class="time">28.4/40.00(-11.6)</span>
+        <div class="details">
+            <div class="day">
+                <span class="label">Day:</span>
+                <span class="time">6.5/8.00(-1.5)</span>
+            </div>
+            <div class="week">
+                <span class="label">Week:</span>
+                <span class="time">28.4/40.00(-11.6)</span>
+            </div>
+            <div class="month">
+                <span class="label">Month:</span>
+                <span class="time">110.2/160.00(-49.8)</span>
+            </div>
         </div>
-        <div class="month">
-            <span class="label">Month:</span>
-            <span class="time">110.2/160.00(-49.8)</span>
+        <div class="work-days">
+            <span class="label">Work days:</span>
+            <span class="time">16/22(-6)</span>
         </div>
-    </div>
-    <div class="work-days">
-        <span class="label">Work days:</span>
-        <span class="time">16/22(-6)</span>
-    </div>
+      </div>
   </body>
 </html>
