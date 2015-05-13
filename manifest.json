@@ -16,6 +16,7 @@
   "permissions": [
     "activeTab",
     "http://erpal.local/",
-    "https://erpal.brightsolutions.de/"
+    "https://erpal.brightsolutions.de/",
+    "http://erpal.brightsolutions.de/"
   ]
 }

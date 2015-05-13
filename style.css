@@ -9,6 +9,7 @@ body {
   margin: 0;
   font: bold 16px 'Open Sans', Arial, Helvetica, sans-serif;
   color: #444;
+  position: relative;
 }
 .label {
   min-width: 100px;
@@ -22,6 +23,7 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 9999;
 }
 .loading img {
   position: absolute;
@@ -45,7 +47,17 @@ body {
   background: #36C086;
   color: #fff;
   border-bottom: 3px solid #ffb506;
-  padding: 18px 16px 14px 16px;
+  padding: 18px 24px 8px 16px;
+}
+.current-task .label {
+  width: 190px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.current-task .task-active {
+  float: right;
+  margin-right: 18px;
 }
 .time {
   float: right;
@@ -55,7 +67,7 @@ body {
 }
 .details {
   box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.2);
-  padding: 10px 16px 6px;
+  padding: 10px 16px 4px;
   background: #F2FAF4;
 }
 .details .row {
@@ -66,4 +78,28 @@ body {
   border-top: 1px dotted #E2E2E2;
   font-size: 90%;
   background: #F2FAF6;
+}
+.i-calendar {
+  width: 14px;
+  display: inline-block;
+  opacity: 0.8;
+  margin-right: 4px;
+  height: 14px;
+  background: transparent url(calendar.png) 0 0 no-repeat;
+}
+.actions {
+  position: absolute;
+  top: 4px;
+  right: 3px;
+  color: #fff;
+}
+.actions .fa.fa-times {
+  clear: both;
+  float: left;
+  margin-bottom: 3px;
+}
+.actions .fa.fa-refresh {
+  clear: both;
+  font-size: 80%;
+  float: left;
 }

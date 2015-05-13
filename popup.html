@@ -5,14 +5,19 @@
     <script src="jquery-1.6.4.min.js"></script>
     <link type="text/css" rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="popup.js"></script>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   </head>
   <body>
       <div class="container">
         <div class="loading processed"><img src="icon.png" alt=""/></div>
+        <div class="actions">
+          <i class="fa fa-times"></i>
+          <i class="fa fa-refresh"></i>
+        </div>
         <div class="current-task">
-            <span class="label">No active timetracking</span>
-            <span class="task-pause"></span>
-            <span class="time"></span>
+          <span class="label">No active timetrackings</span>
+          <span class="time"></span>
+          <span class="task-active"><i class="fa"></i></span>
         </div>
         <div class="details">
             <div class="day row">
@@ -29,8 +34,8 @@
             </div>
         </div>
         <div class="working-days">
-            <span class="label">Working days</span>
-            <span class="time"></span>
+          <i class="i-calendar"></i><span class="label">Working days</span>
+          <span class="time"></span>
         </div>
       </div>
   </body>

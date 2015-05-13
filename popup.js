@@ -3,11 +3,12 @@
 // found in the LICENSE file.
 //https://www.drupal.org/node/2013781#comment-7507759
 
+// @todo: 1) fix days.
 
 
 (function ($) {
-  //var host = "http://erpal.brightsolutions.de";
-  var host = "http://erpal.local";
+  var host = "https://erpal.brightsolutions.de";
+  //var host = "http://erpal.local";
   var url = host + "/services/session/token";
   var tt_url = host + "/rest/projects/timetracking/statistics.json";
 
@@ -23,6 +24,7 @@
       console.log(errorThrown);
     },
     success: function (token) {
+      console.log('token', token);
       $.ajax({
         url : tt_url,
         type : 'post',
@@ -41,6 +43,10 @@
           if (data.current.title != undefined) {
             $('.current-task .label').text(data.current.title);
             $('.current-task .time').html(time_output(data.current.amount, data.current.estimate));
+            $('.current-task .task-active .fa').addClass('fa-play');
+            if (!data.current.active) {
+              $('.current-task .task-active .fa').removeClass('fa-play').addClass('fa-pause');
+            }
           }
 
           $('.details .day .time').html(time_output(data.day, day_limit));
