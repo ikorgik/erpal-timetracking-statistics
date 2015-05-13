@@ -47,10 +47,10 @@
           $('.details .week .time').html(time_output(data.week, week_limit));
           $('.details .month .time').html(time_output(data.month, month_limit));
 
-          var rest = data.work_days.all - data.work_days.current;
+          var rest = data.working_days.all - data.working_days.current;
           var rest_time = (month_limit - data.month) / rest;
           var rest_text = rest + ' * ' + rest_time.toFixed(2);
-          $('.work-days .time').html(time_output(data.work_days.current, data.work_days.all, rest_text));
+          $('.working-days .time').html(time_output(data.working_days.current, data.working_days.all, rest_text));
 
           $('.loading').fadeOut(200, function() {
             $(this).removeClass("processed");

@@ -44,7 +44,6 @@ body {
 .current-task {
   background: #36C086;
   color: #fff;
-  _height: 55px;
   border-bottom: 3px solid #ffb506;
   padding: 18px 16px 14px 16px;
 }
@@ -62,7 +61,7 @@ body {
 .details .row {
   margin: 10px 0;
 }
-.work-days {
+.working-days {
   padding: 10px 16px 8px;
   border-top: 1px dotted #E2E2E2;
   font-size: 90%;
