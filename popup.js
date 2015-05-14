@@ -3,9 +3,6 @@
 // found in the LICENSE file.
 //https://www.drupal.org/node/2013781#comment-7507759
 
-// @todo: 1) fix days.
-
-
 (function ($) {
   var host = "https://erpal.brightsolutions.de";
   //var host = "http://erpal.local";
@@ -54,7 +51,7 @@
           $('.details .month .time').html(time_output(data.month, month_limit));
 
           var rest = data.working_days.all - data.working_days.current;
-          var rest_time = (month_limit - data.month) / rest;
+          var rest_time = (month_limit - parseFloat(data.month) + parseFloat(data.day)) / rest;
           var rest_text = rest + ' * ' + rest_time.toFixed(2);
           $('.working-days .time').html(time_output(data.working_days.current, data.working_days.all, rest_text));
 
@@ -67,7 +64,7 @@
   });
   var time_output = function(current, limit, rest) {
     if (rest == undefined) {
-      rest = limit - current;
+      rest = parseFloat(limit) - parseFloat(current);
       rest = rest.toFixed(2);
     }
     var output = '';
