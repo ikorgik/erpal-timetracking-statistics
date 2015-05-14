@@ -1,17 +1,20 @@
 TODO:
-1) active time on wydget icon.
-2) Settings page:
--host
--day,week,month limits
--invert time on icon
-3) Active play/pause button
-4) Several view modes.
+- Show active time on wydget icon.
+- Settings page:
+  -host
+  -day,week,month limits
+  -invert time on icon
+- Active play/pause button
+- Several view modes.
+- Add link to task.
+- Add color indicators
 
 Now:
-1) Error/login page
-2) Fade effect
-3) Remove icon
-4) Add color indicators
-5) Add link to time trackings.
-6) Add link to task.
-7) Use circle diagram for today?
+- Error/login page
+- Fade effect
+- Remove icon
+- Add link to timetrackings.
+- make links on icons.
+- Use circle diagram for today? http://rendro.github.io/easy-pie-chart/
+- replace load icon
+- include all timetrackings for current task.
