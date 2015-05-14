@@ -11,5 +11,7 @@ Now:
 1) Error/login page
 2) Fade effect
 3) Remove icon
+4) Add color indicators
 5) Add link to time trackings.
 6) Add link to task.
+7) Use circle diagram for today?
