@@ -65,7 +65,15 @@
           $('a.close').click(function (event) {
             window.close();
           });
+          data.day = 6.28;
           $('a.tt-link').attr('href', host + "/projects/timetrackings/tmp");
+          var percent = data.day / day_limit * 100;
+          $('.chart').attr("data-percent", percent);
+          $('.chart span').html(data.day);
+          $('.chart').easyPieChart({
+            //barColor: '#36C086'
+            barColor: '#97D5B6'
+          });
         }
       });
     }

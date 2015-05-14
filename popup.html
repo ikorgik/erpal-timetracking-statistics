@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>ERPAL Timetracking</title>
-    <script src="jquery-1.6.4.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="easypiechart/jquery.easypiechart.min.js"></script>
     <link type="text/css" rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="popup.js"></script>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -24,7 +25,8 @@
         </table>
 
         <div class="details">
-            <div class="day row">
+          <div class="chart" data-percent="73"><span>4.23</span></div>
+            <div class="day row" style="display: none">
                 <span class="label">Day</span>
                 <span class="time"></span>
             </div>

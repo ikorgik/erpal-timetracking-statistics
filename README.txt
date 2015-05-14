@@ -11,10 +11,10 @@ TODO:
 
 Now:
 - Error/login page
-- Fade effect
++ Fade effect
 - Remove icon
-- Add link to timetrackings.
-- make links on icons.
++ Add link to timetrackings.
++ make links on icons.
 - Use circle diagram for today? http://rendro.github.io/easy-pie-chart/
 - replace load icon
 - include all timetrackings for current task.

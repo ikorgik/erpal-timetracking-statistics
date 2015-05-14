@@ -139,3 +139,20 @@ body {
 .actions .fa:active {
   top: 1px;
 }
+.chart {
+  text-align: center;
+  width: 110px;
+  height: 110px;
+  line-height: 110px;
+  position: relative;
+  margin: 0 auto;
+}
+.chart span {
+  color: #35CF8E;
+  font-size: 180%;
+}
+.chart canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
