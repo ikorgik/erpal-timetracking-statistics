@@ -18,3 +18,5 @@ Now:
 - Use circle diagram for today? http://rendro.github.io/easy-pie-chart/
 - replace load icon
 - include all timetrackings for current task.
+
+http://markb.co.uk/building-a-simple-google-chrome-extension.html

@@ -11,14 +11,17 @@
       <div class="container">
         <div class="loading processed"><img src="icon.png" alt=""/></div>
         <div class="actions">
-          <i class="fa fa-times"></i>
-          <i class="fa fa-refresh"></i>
+          <a href="javascript:void(0)" onclick="window.close();"><i class="fa fa-times"></i></a>
+          <a href=""><i class="fa fa-refresh"></i></a>
         </div>
-        <div class="current-task">
-          <span class="label">No active timetrackings</span>
-          <span class="time"></span>
-          <span class="task-active"><i class="fa"></i></span>
-        </div>
+        <table class="current-task">
+          <tr>
+            <td class="task-label"><span class="label">No active timetrackings</span></td>
+            <td class="task-active"><i class="fa"></i></td>
+            <td class="time"></td>
+          <tr>
+        </table>
+
         <div class="details">
             <div class="day row">
                 <span class="label">Day</span>

@@ -50,18 +50,32 @@ body {
   background: #36C086;
   color: #fff;
   border-bottom: 3px solid #ffb506;
-  padding: 18px 24px 10px 16px;
+  padding: 14px 24px 10px 16px;
   opacity: 0;
+  width: 100%;
+}
+.current-task .task-label {
+  width: 1px;
+  white-space: nowrap;
 }
 .current-task .label {
-  width: 190px;
+  max-width: 180px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  vertical-align: bottom;
+  min-width: 0;
+}
+.current-task .task-active i {
+  opacity: 0.9;
 }
 .current-task .task-active {
-  float: right;
-  margin-right: 18px;
+  text-align: center;
+}
+.current-task .time {
+  width: 1px;
+  white-space: nowrap;
+  float: none;
 }
 .time {
   float: right;
@@ -90,6 +104,7 @@ body {
   margin-right: 4px;
   height: 14px;
   background: transparent url(calendar.png) 0 0 no-repeat;
+
 }
 .actions {
   position: absolute;
@@ -97,14 +112,25 @@ body {
   right: 3px;
   color: #fff;
 }
-.actions .fa.fa-times {
+.actions a {
+  color: #fff;
+}
+.actions .fa {
   clear: both;
   float: left;
+  position: relative;
+}
+.actions .fa.fa-times {
   margin-bottom: 3px;
+  opacity: 0.95;
 }
 .actions .fa.fa-refresh {
-  clear: both;
   font-size: 80%;
-  float: left;
-  text-shadow: 1px 1px 1px #dedede,0 0 0 #000,1px 1px 1px #dedede;
+  opacity: 0.9;
+}
+.actions .fa:hover {
+  opacity: 1;
+}
+.actions .fa:active {
+  top: 1px;
 }
