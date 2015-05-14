@@ -12,3 +12,4 @@ Now:
 2) Fade effect
 3) Remove icon
 4) Fix working days
+5) Add link to time trackings.
