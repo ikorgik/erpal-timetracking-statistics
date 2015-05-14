@@ -57,10 +57,15 @@
 
           $('.loading').fadeOut(200, function() {
             $(this).removeClass("processed");
-            $('.current-task').animate({opacity: 1.0}, 300);
+            $('.current-task, .actions').animate({opacity: 1.0}, 300);
             $('.details').animate({opacity: 1.0}, 700);
             $('.working-days').delay(150).animate({opacity: 1.0}, 700);
           });
+
+          $('a.close').click(function (event) {
+            window.close();
+          });
+          $('a.tt-link').attr('href', host + "/projects/timetrackings/tmp");
         }
       });
     }

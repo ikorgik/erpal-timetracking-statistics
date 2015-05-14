@@ -50,7 +50,7 @@ body {
   background: #36C086;
   color: #fff;
   border-bottom: 3px solid #ffb506;
-  padding: 14px 24px 10px 16px;
+  padding: 14px 24px 8px 16px;
   opacity: 0;
   width: 100%;
 }
@@ -85,7 +85,7 @@ body {
 }
 .details {
   box-shadow: inset 0px 5px 6px -3px rgba(0, 0, 0, 0.2);
-  padding: 10px 16px 4px;
+  padding: 6px 16px 4px;
   opacity: 0;
 }
 .details .row {
@@ -111,6 +111,7 @@ body {
   top: 4px;
   right: 3px;
   color: #fff;
+  opacity: 0;
 }
 .actions a {
   color: #fff;
@@ -125,7 +126,11 @@ body {
   opacity: 0.95;
 }
 .actions .fa.fa-refresh {
-  font-size: 80%;
+  display: none;
+}
+.actions .fa.fa-refresh,
+.actions .fa.fa-clock-o {
+  font-size: 84%;
   opacity: 0.9;
 }
 .actions .fa:hover {
