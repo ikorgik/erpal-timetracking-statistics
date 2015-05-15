@@ -9,9 +9,9 @@
   var url = host + "/services/session/token";
   var tt_url = host + "/rest/projects/timetracking/statistics.json";
 
-  var day_limit = '8.00';
-  var week_limit = '40.00';
-  var month_limit = '160.00';
+  var day_limit = "8.00";
+  var week_limit = "40.00";
+  var month_limit = "160.00";
 
   $.ajax({
     url: url,
@@ -23,8 +23,8 @@
     success: function (token) {
       $.ajax({
         url : tt_url,
-        type : 'post',
-        dataType : 'json',
+        type : "post",
+        dataType : "json",
         crossDomain: true,
         cache: false,
         beforeSend: function (request) {
@@ -32,55 +32,57 @@
         },
         error : function(data) {
           if (data.status == 403) {
-            $('.loading-page').fadeOut(200, function() {
-              $('.login-page a.login').attr('href', host);
-              $('.login-page').addClass("processed");
+            var $login_page = $(".login-page");
+            $(".loading-page").fadeOut(200, function() {
+              $login_page
+                .addClass("processed")
+                .find("a.login")
+              $("a.login", $login_page).attr("href", host);
             });
           }
           else {
-            console.log('Error', data);
+            console.log("Error", data);
           }
         },
         success : function(data) {
           if (data.current.title != undefined) {
-            $('.current-task .label').text(data.current.title);
-            $('.current-task .time').html(time_output(data.current.amount, data.current.estimate));
-            $('.current-task .task-active .fa').addClass('fa-play');
+            $(".current-task .label").text(data.current.title);
+            $(".current-task .time").html(time_output(data.current.amount, data.current.estimate));
+            $(".current-task .task-active .fa").addClass("fa-play");
             if (!data.current.active) {
-              $('.current-task .task-active .fa').removeClass('fa-play').addClass('fa-pause');
+              $(".current-task .task-active .fa").removeClass("fa-play").addClass("fa-pause");
             }
           }
 
-          $('.details .day .time').html(time_output(data.day, day_limit));
-          $('.details .week .time').html(time_output(data.week, week_limit));
-          $('.details .month .time').html(time_output(data.month, month_limit));
+          $(".details .day .time").html(time_output(data.day, day_limit));
+          $(".details .week .time").html(time_output(data.week, week_limit));
+          $(".details .month .time").html(time_output(data.month, month_limit));
 
           var rest = data.working_days.all - data.working_days.current;
           var rest_time = (month_limit - parseFloat(data.month) + parseFloat(data.day)) / rest;
-          var rest_text = rest + ' * ' + rest_time.toFixed(2);
-          $('.working-days .time').html(time_output(data.working_days.current, data.working_days.all, rest_text));
+          var rest_text = rest + " * " + rest_time.toFixed(2);
+          $(".working-days .time").html(time_output(data.working_days.current, data.working_days.all, rest_text));
 
-          $('.loading-page').fadeOut(200, function() {
+          $(".loading-page").fadeOut(200, function() {
             $(this).removeClass("processed");
-            $('.current-task, .actions').animate({opacity: 1.0}, 300);
-            $('.details').animate({opacity: 1.0}, 700);
-            $('.working-days').delay(150).animate({opacity: 1.0}, 700);
+            $(".current-task, .actions").animate({opacity: 1.0}, 300);
+            $(".details").animate({opacity: 1.0}, 700);
+            $(".working-days").delay(150).animate({opacity: 1.0}, 700);
           });
 
-          $('a.close').click(function (event) {
+          $("a.close").click(function (event) {
             window.close();
           });
-          //data.day = 6.28;
-          $('a.tt-link').attr('href', host + "/projects/timetrackings/tmp");
+
+          $("a.tt-link").attr("href", host + "/projects/timetrackings/tmp");
           var percent = data.day / day_limit * 100;
-          var rest = day_limit - data.day;
-          $('.chart').attr("data-percent", percent);
-          $('.chart .chart-time').html(data.day);
-          $('.chart .chart-limit').html(day_limit);
-          $('.chart .chart-rest').html(rest.toFixed(2));
-          $('.chart').easyPieChart({
-            //barColor: '#36C086'
-            barColor: '#97D5B6'
+          rest = day_limit - data.day;
+          $(".chart").attr("data-percent", percent);
+          $(".chart .chart-time").html(data.day);
+          $(".chart .chart-limit").html(day_limit);
+          $(".chart .chart-rest").html(rest.toFixed(2));
+          $(".chart").easyPieChart({
+            barColor: "#97D5B6"
           });
         }
       });
@@ -91,11 +93,11 @@
       rest = parseFloat(limit) - parseFloat(current);
       rest = rest.toFixed(2);
     }
-    var output = '';
-    output += '<span class="">' + current + '</span>';
-    output += ' / ';
-    output += '<span class="">' + limit + '</span>';
-    output += '<span class="rest"> (' + rest + ')</span>';
+    var output = "";
+    output += "<span class=''>" + current + "</span>";
+    output += " / ";
+    output += "<span class=''>" + limit + "</span>";
+    output += "<span class='rest'> (" + rest + ")</span>";
     return output;
   }
 })(jQuery);

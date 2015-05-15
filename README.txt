@@ -10,14 +10,6 @@ TODO:
 - Add color indicators
 - Include all timetrackings for current task (not only own).
 
-Now:
-- Error/login page
-+ Fade effect
-+ Remove icon
-+ Add link to timetrackings.
-+ make links on icons.
-+ Use circle diagram for today? http://rendro.github.io/easy-pie-chart/
-+ replace load icon
-
+Usefull links:
 http://markb.co.uk/building-a-simple-google-chrome-extension.html
 https://developer.chrome.com/extensions/storage

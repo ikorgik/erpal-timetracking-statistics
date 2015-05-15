@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "ERPAL Timetracking",
-  "description": "This extension shows an ERPAL Timetracking in detail.",
+  "description": "This extension shows an ERPAL Timetracking in details.",
   "version": "1.0",
 
   "background": {
@@ -14,9 +14,7 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "activeTab",
     "http://erpal.local/",
-    "https://erpal.brightsolutions.de/",
-    "http://erpal.brightsolutions.de/"
+    "https://erpal.brightsolutions.de/"
   ]
 }
