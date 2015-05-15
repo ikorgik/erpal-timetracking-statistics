@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "ERPAL Timetracking",
+  "name": "ERPAL Timetracking Statistics",
   "description": "This extension shows an ERPAL Timetracking in details.",
   "version": "1.0",
 
