@@ -21,7 +21,6 @@
       console.log(errorThrown);
     },
     success: function (token) {
-      console.log('token', token);
       $.ajax({
         url : tt_url,
         type : 'post',
@@ -32,16 +31,17 @@
           request.setRequestHeader("X-CSRF-Token", token);
         },
         error : function(data) {
-          //error code
-          console.log('Error', data);
           if (data.status == 403) {
             $('.loading-page').fadeOut(200, function() {
+              $('.login-page a.login').attr('href', host);
               $('.login-page').addClass("processed");
             });
           }
+          else {
+            console.log('Error', data);
+          }
         },
         success : function(data) {
-          console.log(data);
           if (data.current.title != undefined) {
             $('.current-task .label').text(data.current.title);
             $('.current-task .time').html(time_output(data.current.amount, data.current.estimate));

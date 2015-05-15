@@ -52,6 +52,29 @@ body {
   font-size: 66%;
   opacity: 0.8;
 }
+.login-page img {
+  position: absolute;
+  left: calc(50% - 88px);
+  top: 36px;
+  opacity: 0.7;
+}
+.login-page a {
+  position: absolute;
+  left: calc(50% - 45px);
+  bottom: 23px;
+  text-decoration: none;
+  color: rgba(102, 102, 102, 0.78);
+  font-size: 140%;
+}
+.login-page a:hover {
+  text-decoration: underline;
+}
+.login-page a:active {
+  bottom: 22px;
+}
+.login-page a i {
+  margin-right: 5px;
+}
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
