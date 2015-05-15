@@ -106,7 +106,7 @@ body {
 .login-page a {
   position: absolute;
   bottom: 23px;
-  left: calc(50% - 45px);
+  left: calc(50% - 46px);
   color: rgba(102, 102, 102, 0.78);
   text-decoration: none;
   font-size: 140%;
