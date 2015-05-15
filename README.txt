@@ -13,3 +13,6 @@ TODO:
 Usefull links:
 http://markb.co.uk/building-a-simple-google-chrome-extension.html
 https://developer.chrome.com/extensions/storage
+
+Maintainer:
+Sergey Korzh (ikorgik@gmail.com)
