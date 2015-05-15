@@ -13,10 +13,11 @@ TODO:
 Now:
 - Error/login page
 + Fade effect
-- Remove icon
++ Remove icon
 + Add link to timetrackings.
 + make links on icons.
 + Use circle diagram for today? http://rendro.github.io/easy-pie-chart/
 + replace load icon
 
 http://markb.co.uk/building-a-simple-google-chrome-extension.html
+https://developer.chrome.com/extensions/storage
