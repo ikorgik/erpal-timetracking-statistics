@@ -9,6 +9,7 @@ TODO:
 - Add link to task.
 - Add color indicators
 - Include all timetrackings for current task (not only own).
+- Convert time to minutes.
 
 Usefull links:
 http://markb.co.uk/building-a-simple-google-chrome-extension.html
