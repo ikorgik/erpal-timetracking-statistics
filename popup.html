@@ -2,52 +2,59 @@
 <html>
   <head>
     <title>ERPAL Timetracking</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
     <script src="js/jquery.min.js"></script>
-    <script src="easypiechart/jquery.easypiechart.min.js"></script>
-    <link type="text/css" rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="popup.js"></script>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <script src="js/jquery.easypiechart.min.js"></script>
+    <script src="js/popup.js"></script>
   </head>
   <body>
-      <div class="container">
-        <div class="loading processed"><img src="icon.png" alt=""/></div>
-        <div class="actions">
-          <a class="close" href="#"><i class="fa fa-times"></i></a>
-          <a href=""><i class="fa fa-refresh"></i></a>
-          <a class="tt-link" href="" target="_blank"><i class="fa fa-clock-o"></i></a>
-        </div>
-        <table class="current-task">
-          <tr>
-            <td class="task-label"><span class="label">No active timetrackings</span></td>
-            <td class="task-active"><i class="fa"></i></td>
-            <td class="time"></td>
-          <tr>
-        </table>
+    <div class="container">
+      <div class="loading processed">
+        <img src="img/logo.png" alt=""/>
+        <span class="load-label">Loading...</span>
+      </div>
 
-        <div class="details">
-          <div class="chart" data-percent="73">
-            <span class="chart-label">Today</span>
-            <span class="chart-time"></span>
-            <span class="chart-limit"></span>
-            <span class="chart-rest"></span>
-          </div>
-          <div class="day row" style="display: none">
-              <span class="label">Day</span>
-              <span class="time"></span>
-          </div>
-          <div class="week row">
-              <span class="label">Week</span>
-              <span class="time"></span>
-          </div>
-          <div class="month row">
-              <span class="label">Month</span>
-              <span class="time"></span>
-          </div>
+      <div class="actions">
+        <a class="close" href="#"><i class="fa fa-times"></i></a>
+        <a class="tt-link" href="" target="_blank"><i class="fa fa-clock-o"></i></a>
+      </div>
+
+      <table class="current-task">
+        <tr>
+          <td class="task-label"><span class="label">No active timetrackings</span></td>
+          <td class="task-active"><i class="fa"></i></td>
+          <td class="time"></td>
+        <tr>
+      </table>
+
+      <div class="details">
+        <div class="chart" data-percent="73">
+          <span class="chart-label">Today</span>
+          <span class="chart-time"></span>
+          <span class="chart-limit"></span>
+          <span class="chart-rest"></span>
         </div>
-        <div class="working-days">
-          <i class="i-calendar"></i><span class="label">Working days</span>
+
+        <div class="day row" style="display: none">
+          <span class="label">Day</span>
+          <span class="time"></span>
+        </div>
+        <div class="week row">
+          <span class="label">Week</span>
+          <span class="time"></span>
+        </div>
+        <div class="month row">
+          <span class="label">Month</span>
           <span class="time"></span>
         </div>
       </div>
+
+      <div class="working-days">
+        <span class="label"><i class="fa fa-calendar"></i>Working days</span>
+        <span class="time"></span>
+      </div>
+    </div>
+
   </body>
 </html>
