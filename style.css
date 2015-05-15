@@ -8,7 +8,7 @@ body {
   width: 400px;
   margin: 0;
   font: bold 16px 'Open Sans', Arial, Helvetica, sans-serif;
-  color: #444;
+  color: rgba(102, 102, 102, 0.85);
   position: relative;
 }
 .container {
@@ -147,9 +147,32 @@ body {
   position: relative;
   margin: 0 auto;
 }
-.chart span {
+.chart .chart-time {
   color: #35CF8E;
   font-size: 180%;
+}
+.chart .chart-label {
+  position: absolute;
+  font-size: 64%;
+  top: 24px;
+  line-height: normal;
+  left: calc(50% - 15px);
+  color: rgba(68, 68, 68, 0.29);
+}
+.chart .chart-limit {
+  position: absolute;
+  bottom: 0;
+  right: -29px;
+  line-height: normal;
+  color: #9E9E9E;
+}
+.chart .chart-rest {
+  position: absolute;
+  bottom: 0;
+  left: -29px;
+  line-height: normal;
+  font-size: 84%;
+  color: #8e8e8e;
 }
 .chart canvas {
   position: absolute;

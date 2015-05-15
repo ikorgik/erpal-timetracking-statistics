@@ -8,6 +8,7 @@ TODO:
 - Several view modes.
 - Add link to task.
 - Add color indicators
+- Include all timetrackings for current task (not only own).
 
 Now:
 - Error/login page
@@ -17,6 +18,5 @@ Now:
 + make links on icons.
 - Use circle diagram for today? http://rendro.github.io/easy-pie-chart/
 - replace load icon
-- include all timetrackings for current task.
 
 http://markb.co.uk/building-a-simple-google-chrome-extension.html
