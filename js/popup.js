@@ -34,6 +34,11 @@
         error : function(data) {
           //error code
           console.log('Error', data);
+          if (data.status == 403) {
+            $('.loading-page').fadeOut(200, function() {
+              $('.login-page').addClass("processed");
+            });
+          }
         },
         success : function(data) {
           console.log(data);
@@ -55,7 +60,7 @@
           var rest_text = rest + ' * ' + rest_time.toFixed(2);
           $('.working-days .time').html(time_output(data.working_days.current, data.working_days.all, rest_text));
 
-          $('.loading').fadeOut(200, function() {
+          $('.loading-page').fadeOut(200, function() {
             $(this).removeClass("processed");
             $('.current-task, .actions').animate({opacity: 1.0}, 300);
             $('.details').animate({opacity: 1.0}, 700);

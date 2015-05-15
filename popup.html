@@ -10,49 +10,55 @@
   </head>
   <body>
     <div class="container">
-      <div class="loading processed">
+      <div class="loading-page processed">
         <img src="img/logo.png" alt=""/>
         <span class="load-label">Loading...</span>
       </div>
-
-      <div class="actions">
-        <a class="close" href="#"><i class="fa fa-times"></i></a>
-        <a class="tt-link" href="" target="_blank"><i class="fa fa-clock-o"></i></a>
+      <div class="login-page">
+        <img src="img/logo.png" alt=""/>
+        <a class="login" href=""><i class="fa fa-sign-in"></i>Sign In</a>
       </div>
 
-      <table class="current-task">
-        <tr>
-          <td class="task-label"><span class="label">No active timetrackings</span></td>
-          <td class="task-active"><i class="fa"></i></td>
-          <td class="time"></td>
-        <tr>
-      </table>
-
-      <div class="details">
-        <div class="chart" data-percent="73">
-          <span class="chart-label">Today</span>
-          <span class="chart-time"></span>
-          <span class="chart-limit"></span>
-          <span class="chart-rest"></span>
+      <div class="statistics-page">
+        <div class="actions">
+          <a class="close" href="#"><i class="fa fa-times"></i></a>
+          <a class="tt-link" href="" target="_blank"><i class="fa fa-clock-o"></i></a>
         </div>
 
-        <div class="day row" style="display: none">
-          <span class="label">Day</span>
-          <span class="time"></span>
-        </div>
-        <div class="week row">
-          <span class="label">Week</span>
-          <span class="time"></span>
-        </div>
-        <div class="month row">
-          <span class="label">Month</span>
-          <span class="time"></span>
-        </div>
-      </div>
+        <table class="current-task">
+          <tr>
+            <td class="task-label"><span class="label">No active timetrackings</span></td>
+            <td class="task-active"><i class="fa"></i></td>
+            <td class="time"></td>
+          <tr>
+        </table>
 
-      <div class="working-days">
-        <span class="label"><i class="fa fa-calendar"></i>Working days</span>
-        <span class="time"></span>
+        <div class="details">
+          <div class="chart" data-percent="73">
+            <span class="chart-label">Today</span>
+            <span class="chart-time"></span>
+            <span class="chart-limit"></span>
+            <span class="chart-rest"></span>
+          </div>
+
+          <div class="day row" style="display: none">
+            <span class="label">Day</span>
+            <span class="time"></span>
+          </div>
+          <div class="week row">
+            <span class="label">Week</span>
+            <span class="time"></span>
+          </div>
+          <div class="month row">
+            <span class="label">Month</span>
+            <span class="time"></span>
+          </div>
+        </div>
+
+        <div class="working-days">
+          <span class="label"><i class="fa fa-calendar"></i>Working days</span>
+          <span class="time"></span>
+        </div>
       </div>
     </div>
 

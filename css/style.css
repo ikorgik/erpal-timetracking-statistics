@@ -18,7 +18,8 @@ body {
   min-width: 100px;
   display: inline-block;
 }
-.loading {
+.loading-page,
+.login-page {
   display: none;
   background: #F2FAF6;
   position: absolute;
@@ -28,7 +29,11 @@ body {
   right: 0;
   z-index: 9999;
 }
-.loading img {
+.loading-page.processed,
+.login-page.processed {
+  display: block;
+}
+.loading-page img {
   position: absolute;
   top: calc(50% - 33px);
   left: calc(50% - 33px);
@@ -40,7 +45,7 @@ body {
   box-shadow: 0px 0px 3px rgba(73, 111, 78, 0.38);
   border-radius: 50%;
 }
-.loading .load-label {
+.loading-page .load-label {
   position: absolute;
   top: calc(50% + 42px);
   left: calc(50% - 19px);
@@ -50,9 +55,6 @@ body {
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-.loading.processed {
-  display: block;
-}
 
 .current-task {
   background: #36C086;
