@@ -4,9 +4,9 @@
   var url = host + "/services/session/token";
   var tt_url = host + "/rest/projects/timetracking/statistics.json";
 
-  var day_limit = "8.00";
-  var week_limit = "40.00";
-  var month_limit = "160.00";
+  var day_limit = 8.00;
+  var week_limit = 40.00;
+  var month_limit = 160.00;
 
   $.ajax({
     url: url,
@@ -54,24 +54,23 @@
 
           // Fill details container.
           var $details = $(".details");
-          $(".day .time", $details).html(time_output(data.day, day_limit));
           $(".week .time", $details).html(time_output(data.week, week_limit));
           $(".month .time", $details).html(time_output(data.month, month_limit));
 
           // Fill working days container.
           var rest = data.working_days.all - data.working_days.current;
           var rest_time = (month_limit - parseFloat(data.month) + parseFloat(data.day)) / rest;
-          var rest_text = rest + " * " + rest_time.toFixed(2);
-          $(".working-days .time").html(time_output(data.working_days.current, data.working_days.all, rest_text));
+          var rest_text = rest + " * " + rest_time.toTime();
+          $(".working-days .time").html(time_output(data.working_days.current, data.working_days.all, false, rest_text));
 
           // Fill chart container.
           var percent = data.day / day_limit * 100;
           rest = day_limit - data.day;
           var $chart = $(".chart");
           $chart.attr("data-percent", percent);
-          $(".chart-time", $chart).html(data.day);
-          $(".chart-limit", $chart).html(day_limit);
-          $(".chart-rest", $chart).html(rest.toFixed(2));
+          $(".chart-time", $chart).html(parseFloat(data.day).toTime());
+          $(".chart-limit", $chart).html(day_limit.toTime());
+          $(".chart-rest", $chart).html(rest.toTime());
           $chart.easyPieChart({
             barColor: "#97D5B6"
           });
@@ -97,10 +96,16 @@
   /**
    * Theming function to output time in "current / limit (rest)" format.
    */
-  var time_output = function(current, limit, rest) {
+  var time_output = function(current, limit, to_time, rest) {
+    to_time = (to_time == undefined) ? true : to_time;
+
     if (rest == undefined) {
       rest = parseFloat(limit) - parseFloat(current);
-      rest = rest.toFixed(2);
+    }
+    if (to_time) {
+      current = parseFloat(current).toTime();
+      limit = parseFloat(limit).toTime();
+      rest = parseFloat(rest).toTime();
     }
     var output = "";
     output += "<span class=''>" + current + "</span>";
@@ -109,5 +114,19 @@
     output += "<span class='rest'> (" + rest + ")</span>";
     return output;
   }
+
+  /**
+   * Converts float number to time format.
+   */
+  Number.prototype.toTime = function() {
+    var positive = (this < 0) ? '-' : '';
+    var val = Math.abs(this);
+    var minutes = (val % 1).toFixed(2) * 60;
+    minutes = minutes.toFixed();
+    if (minutes < 10) {
+      minutes = '0' + minutes;
+    }
+    return positive + Math.trunc(val) + ':' + minutes;
+  };
 
 })(jQuery);
