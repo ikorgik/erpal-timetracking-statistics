@@ -3,14 +3,15 @@
 
   "name": "ERPAL Timetracking Statistics",
   "description": "This extension shows an ERPAL Timetracking in details.",
-  "version": "1.0",
+  "version": "1.0.2",
 
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
   "permissions": [
-    "http://erpal.local/",
-    "https://erpal.brightsolutions.de/"
+    "tabs",
+    "http://*/*",
+    "https://*/*"
   ]
 }
