@@ -58,9 +58,17 @@
           $(".month .time", $details).html(time_output(data.month, month_limit));
 
           // Fill working days container.
-          var rest = data.working_days.all - data.working_days.current;
-          var rest_time = (month_limit - parseFloat(data.month) + parseFloat(data.day)) / rest;
-          var rest_text = rest + " * " + rest_time.toTime();
+          var rest_time = month_limit - parseFloat(data.month);
+          if (data.day > day_limit) {
+            // Set next day if day time more then day limit.
+            data.working_days.current++;
+          }
+          else {
+            rest_time += parseFloat(data.day);
+          }
+          var rest_days = data.working_days.all - data.working_days.current;
+          var rest_time_days = rest_time / rest_days;
+          var rest_text = rest_days + " * " + rest_time_days.toTime();
           $(".working-days .time").html(time_output(data.working_days.current, data.working_days.all, false, rest_text));
 
           // Fill chart container.
