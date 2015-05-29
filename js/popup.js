@@ -59,7 +59,7 @@
 
           // Fill working days container.
           var rest_time = month_limit - parseFloat(data.month);
-          if (data.day > day_limit) {
+          if (data.day > day_limit && (data.working_days.all - data.working_days.current > 1)) {
             // Set next day if day time more then day limit.
             data.working_days.current++;
           }
