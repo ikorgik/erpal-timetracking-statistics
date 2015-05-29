@@ -67,6 +67,9 @@
             rest_time += parseFloat(data.day);
           }
           var rest_days = data.working_days.all - data.working_days.current;
+          if (rest_days < 1) {
+            rest_days = 1;
+          }
           var rest_time_days = rest_time / rest_days;
           var rest_text = rest_days + " * " + rest_time_days.toTime();
           $(".working-days .time").html(time_output(data.working_days.current, data.working_days.all, false, rest_text));
