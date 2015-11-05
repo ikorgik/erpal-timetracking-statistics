@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "ERPAL Timetracking Statistics",
   "description": "This extension shows an ERPAL Timetracking in details.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "browser_action": {
     "default_icon": "img/icon19.png",
     "default_popup": "popup.html"

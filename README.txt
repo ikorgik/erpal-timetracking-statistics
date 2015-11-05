@@ -15,5 +15,7 @@ Usefull links:
 http://markb.co.uk/building-a-simple-google-chrome-extension.html
 https://developer.chrome.com/extensions/storage
 
+Publish in the Chrome Web Store: https://developer.chrome.com/webstore/publish
+
 Maintainer:
 Sergey Korzh (ikorgik@gmail.com)
