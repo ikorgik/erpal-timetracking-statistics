@@ -10,7 +10,12 @@
   "icons": {
     "128": "icon128.png"
   },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
   "permissions": [
+    "storage",
     "tabs",
     "http://*/*",
     "https://*/*"

@@ -3,10 +3,7 @@
   //var host = "http://erpal.local";
   var url = host + "/services/session/token";
   var tt_url = host + "/rest/projects/timetracking/statistics.json";
-
   var day_limit = 8.00;
-  var week_limit = 40.00;
-  var month_limit = 160.00;
 
   $.ajax({
     url: url,
@@ -52,6 +49,9 @@
             }
           }
 
+          var week_limit = day_limit * 5;
+          var month_limit = data.working_days.all * day_limit;
+
           // Fill details container.
           var $details = $(".details");
           $(".week .time", $details).html(time_output(data.week, week_limit));
@@ -76,7 +76,7 @@
 
           // Fill chart container.
           var percent = data.day / day_limit * 100;
-          rest = day_limit - data.day;
+          var rest = day_limit - data.day;
           var $chart = $(".chart");
           $chart.attr("data-percent", percent);
           $(".chart-time", $chart).html(parseFloat(data.day).toTime());

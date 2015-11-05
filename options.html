@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ERPAL Timetracking</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="statistics-page">
+
+        <div class="option-details">
+          <div class="week row">
+            <span class="label">ERPAL host</span>
+            <input type="text" id="erpal-host" size="26" value="" />
+          </div>
+          <div class="month row">
+            <span class="label">Hours per day</span>
+            <input type="text" id="hour-per-day" size="2" value="8" maxlength="2"/>
+          </div>
+        </div>
+
+        <div class="option-working-days">
+          <span class="label"><button id="save">Save</button></span>
+          <span id="status" class="time"></span>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="js/options.js"></script>
+  </body>
+</html>

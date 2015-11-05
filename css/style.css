@@ -158,18 +158,25 @@ body {
 }
 
 /* Details container */
+.option-details,
 .details {
   padding: 10px 16px 2px;
   box-shadow: inset 0 5px 6px -3px rgba(0, 0, 0, 0.2);
+}
+.details {
   opacity: 0;
 }
+.option-details .row,
 .details .row {
   margin: 10px 0;
 }
+.option-working-days,
 .working-days {
   padding: 10px 16px 8px;
   border-top: 1px dotted #E2E2E2;
   font-size: 90%;
+}
+.working-days {
   opacity: 0;
 }
 .working-days .fa-calendar {
