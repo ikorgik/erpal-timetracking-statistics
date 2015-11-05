@@ -19,7 +19,7 @@
         $(".error-page")
           .addClass("processed")
           .find(".messages")
-          .html('Please define correct "ERPAL host" in settings. Go to extensions page (chrome://extensions) and click "Options" for extension.');
+          .html('Please define correct "ERPAL host". <br /> Go to extensions page (chrome://extensions) and click "Options" for extension.');
         console.log(errorThrown);
       },
       success: function (token) {
