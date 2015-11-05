@@ -62,6 +62,7 @@ body {
 
 /* Loading page */
 .loading-page,
+.error-page,
 .login-page {
   position: absolute;
   top: 0;
@@ -73,8 +74,14 @@ body {
   background: #F2FAF6;
 }
 .loading-page.processed,
+.error-page.processed,
 .login-page.processed {
   display: block;
+}
+.error-page .messages {
+  padding: 24% 10%;
+  text-align: center;
+  color: #CA7272;
 }
 .loading-page img {
   position: absolute;
